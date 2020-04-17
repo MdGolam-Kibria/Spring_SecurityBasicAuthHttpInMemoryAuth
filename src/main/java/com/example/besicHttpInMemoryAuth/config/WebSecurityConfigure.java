@@ -27,8 +27,12 @@ public class WebSecurityConfigure extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .anyRequest().authenticated()
+                .antMatchers("/").permitAll()//mane sobai ke / eta par hote parbe
+                .anyRequest().authenticated() //ekhan theke jekono request access korte hole auth hoiya aste hobe
                 .and()
-                .httpBasic();
+                .httpBasic()
+                .and()
+                .exceptionHandling().accessDeniedPage("/403");//jodi kono vabe access na pai tahole kon page ta show korbe
+                    // seta hundle korechi.
     }
 }

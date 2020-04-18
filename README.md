@@ -19,5 +19,5 @@
 
 - Set Access Denied Page For Wrong Users.
 
-- More features Comming.........
+- More features Comming Soon.........
 
